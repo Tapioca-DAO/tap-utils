@@ -1,5 +1,5 @@
 {
-    "name": "tapioca-mocks",
+    "name": "tapioca-utils",
     "scripts": {
         "clean": "npx hardhat --config hardhat.export.ts clean",
         "compile": "npx hardhat --config hardhat.export.ts compile",
