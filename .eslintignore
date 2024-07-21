@@ -3,6 +3,7 @@ artifacts
 cache
 coverage
 gitmodule
+lib
 typechain
 docs
 contracts
