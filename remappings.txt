@@ -1,4 +1,3 @@
-contracts/=contracts/
 solidity-bytes-utils/=node_modules/@layerzerolabs/solidity-bytes-utils/
 @boringcrypto/=node_modules/@boringcrypto/
 @chainlink/=node_modules/@chainlink/

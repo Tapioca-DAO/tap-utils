@@ -31,6 +31,12 @@ To clone the repo:
 git clone https://github.com/Tapioca-DAO/tap-utils.git && cd tap-utils
 ```
 
+To install as a forge library:
+
+```sh
+forge install Tapioca-DAO/tap-utils
+```
+
 To install as a submodule:
     
 ```sh
@@ -42,7 +48,6 @@ git submodule add https://github.com/Tapioca-DAO/tap-utils.git
 To install this repository:
 
 ```bash
-git submodule update --init --recursive
+forge install
 yarn
-forge build
 ```

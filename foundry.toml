@@ -14,9 +14,8 @@ ignored_error_codes = ["shadowing"] # For LBP
 remappings = [
     "tapioca-periph/=contracts/",
 	"solidity-bytes-utils/=node_modules/@layerzerolabs/solidity-bytes-utils/",
-	"tapioca-sdk/=gitmodule/tapioca-sdk/src/",
-	"tapioca-lbp/=gitmodule/tapioca-lbp/contracts/",
-	"permitc/=gitmodule/permitc/src/",
+	"tapioca-lbp/=lib/tapioca-lbp/contracts/",
+	"permitc/=lib/permitc/src/",
 ]
 
 
