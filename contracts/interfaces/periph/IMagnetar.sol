@@ -156,3 +156,7 @@ interface IMagnetarOptionModule {
     function lockAndParticipate(LockAndParticipateData memory data) external payable;
     function exitPositionAndRemoveCollateral(ExitPositionAndRemoveCollateralData memory data) external payable;
 }
+
+interface IMagnetarMintModule {
+    function mintBBLendSGLLockTOLP(MintFromBBAndLendOnSGLData memory data) external payable;
+}
