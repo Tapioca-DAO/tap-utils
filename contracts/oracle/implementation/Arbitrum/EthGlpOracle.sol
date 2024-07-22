@@ -6,7 +6,7 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/security/ReentrancyGuard.
 
 // Tapioca
 import {AccessControlDefaultAdminRules} from "../../external/AccessControlDefaultAdminRules.sol";
-import {ITapiocaOracle} from "tapioca-periph/interfaces/periph/ITapiocaOracle.sol";
+import {ITapiocaOracle} from "contracts/interfaces/periph/ITapiocaOracle.sol";
 
 contract EthGlpOracle is ITapiocaOracle, AccessControlDefaultAdminRules, ReentrancyGuard {
     ITapiocaOracle public wethUsdOracle;

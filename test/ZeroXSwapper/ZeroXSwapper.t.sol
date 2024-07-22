@@ -8,11 +8,11 @@ import {TestBase} from "forge-std/Base.sol";
 
 import "forge-std/console.sol";
 
-import {IZeroXSwapper} from "tapioca-periph/interfaces/periph/IZeroXSwapper.sol";
-import {ICluster} from "tapioca-periph/interfaces/periph/ICluster.sol";
+import {IZeroXSwapper} from "contracts/interfaces/periph/IZeroXSwapper.sol";
+import {ICluster} from "contracts/interfaces/periph/ICluster.sol";
 import {ZerroXSwapperMockTarget} from "./ZerroXSwapperMockTarget.sol";
-import {ZeroXSwapper} from "tapioca-periph/Swapper/ZeroXSwapper.sol";
-import {Cluster} from "tapioca-periph/Cluster/Cluster.sol";
+import {ZeroXSwapper} from "contracts/Swapper/ZeroXSwapper.sol";
+import {Cluster} from "contracts/Cluster/Cluster.sol";
 import {ERC20Mock} from "../mocks/ERC20Mock.sol";
 
 // Lz

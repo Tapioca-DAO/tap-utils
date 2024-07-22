@@ -7,9 +7,9 @@ import {
 } from "@layerzerolabs/lz-evm-oapp-v2/contracts/oft/interfaces/IOFT.sol";
 
 // Tapioca
-import {LZSendParam} from "tapioca-periph/interfaces/periph/ITapiocaOmnichainEngine.sol";
+import {LZSendParam} from "contracts/interfaces/periph/ITapiocaOmnichainEngine.sol";
 import {BaseTapiocaOmnichainEngine} from "./BaseTapiocaOmnichainEngine.sol";
-import {ICluster} from "tapioca-periph/interfaces/periph/ICluster.sol";
+import {ICluster} from "contracts/interfaces/periph/ICluster.sol";
 
 /*
 

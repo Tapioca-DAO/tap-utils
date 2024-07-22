@@ -14,10 +14,10 @@ import {StorageSlot} from "@openzeppelin/contracts/utils/StorageSlot.sol";
 import {BytesLib} from "solidity-bytes-utils/contracts/BytesLib.sol";
 
 // Tapioca
-import {ITapiocaOmnichainReceiveExtender} from "tapioca-periph/interfaces/periph/ITapiocaOmnichainEngine.sol";
-import {PearlmitHandler, IPearlmit} from "tapioca-periph/pearlmit/PearlmitHandler.sol";
+import {ITapiocaOmnichainReceiveExtender} from "contracts/interfaces/periph/ITapiocaOmnichainEngine.sol";
+import {PearlmitHandler, IPearlmit} from "contracts/pearlmit/PearlmitHandler.sol";
 import {TapiocaOmnichainExtExec} from "./extension/TapiocaOmnichainExtExec.sol";
-import {ICluster} from "tapioca-periph/interfaces/periph/ICluster.sol";
+import {ICluster} from "contracts/interfaces/periph/ICluster.sol";
 import {BaseToeMsgType} from "./BaseToeMsgType.sol";
 
 /*

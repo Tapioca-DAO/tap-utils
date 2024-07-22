@@ -9,7 +9,7 @@ import {ERC20Mock} from "../mocks/ERC20Mock.sol";
 import {ERC721Mock} from "../mocks/ERC721Mock.sol";
 import {ERC1155Mock} from "../mocks/ERC1155Mock.sol";
 
-import {Pearlmit} from "tapioca-periph/pearlmit/Pearlmit.sol";
+import {Pearlmit} from "contracts/pearlmit/Pearlmit.sol";
 
 import "forge-std/console.sol";
 

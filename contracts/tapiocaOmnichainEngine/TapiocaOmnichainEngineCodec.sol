@@ -17,8 +17,8 @@ import {
     YieldBoxApproveAllMsg,
     MarketPermitActionMsg,
     YieldBoxApproveAssetMsg
-} from "tapioca-periph/interfaces/periph/ITapiocaOmnichainEngine.sol";
-import {IPearlmit} from "tapioca-periph/interfaces/periph/IPearlmit.sol";
+} from "contracts/interfaces/periph/ITapiocaOmnichainEngine.sol";
+import {IPearlmit} from "contracts/interfaces/periph/IPearlmit.sol";
 
 /*
 

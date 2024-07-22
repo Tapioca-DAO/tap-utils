@@ -6,8 +6,8 @@ import {SafeERC20, IERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeE
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 // Tapioca
-import {IZeroXSwapper} from "tapioca-periph/interfaces/periph/IZeroXSwapper.sol";
-import {ICluster} from "tapioca-periph/interfaces/periph/ICluster.sol";
+import {IZeroXSwapper} from "contracts/interfaces/periph/IZeroXSwapper.sol";
+import {ICluster} from "contracts/interfaces/periph/ICluster.sol";
 
 /*
 

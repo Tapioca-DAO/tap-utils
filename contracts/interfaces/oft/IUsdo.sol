@@ -18,7 +18,7 @@ import {
 } from "../tap-token/ITapiocaOptionBroker.sol";
 import {IOptionsUnlockData, IOptionsLockData} from "../tap-token/ITapiocaOptionLiquidityProvision.sol";
 import {ICommonData, ICommonExternalContracts} from "../common/ICommonData.sol";
-import {IPearlmit} from "tapioca-periph/interfaces/periph/IPearlmit.sol";
+import {IPearlmit} from "contracts/interfaces/periph/IPearlmit.sol";
 import {MagnetarWithdrawData} from "../periph/IMagnetar.sol";
 import {IDepositData} from "../common/ICommonData.sol";
 

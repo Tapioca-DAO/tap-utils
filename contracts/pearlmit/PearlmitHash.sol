@@ -2,7 +2,7 @@
 pragma solidity 0.8.22;
 
 // Tapioca
-import {IPearlmit} from "tapioca-periph/interfaces/periph/IPearlmit.sol";
+import {IPearlmit} from "contracts/interfaces/periph/IPearlmit.sol";
 
 /*
 
