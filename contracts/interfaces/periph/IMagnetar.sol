@@ -142,3 +142,17 @@ interface IMagnetarModuleExtender {
     function isValidActionId(uint8 actionId) external view returns (bool);
     function handleAction(MagnetarCall calldata call) external payable;
 }
+
+interface MagnetarCollateralModule {
+    function depositAddCollateralAndBorrowFromMarket(DepositAddCollateralAndBorrowFromMarketData memory data) external payable;
+    function depositRepayAndRemoveCollateralFromMarket(DepositRepayAndRemoveCollateralFromMarketData memory data) external payable;
+}
+
+interface MagnetarYieldBoxModule {
+    function withdrawHere(MagnetarWithdrawData memory data) external payable;
+}
+
+interface MagnetarOptionModule {
+    function lockAndParticipate(LockAndParticipateData memory data) external payable;
+    function exitPositionAndRemoveCollateral(ExitPositionAndRemoveCollateralData memory data) external payable;
+}
