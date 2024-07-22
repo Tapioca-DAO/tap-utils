@@ -143,16 +143,16 @@ interface IMagnetarModuleExtender {
     function handleAction(MagnetarCall calldata call) external payable;
 }
 
-interface MagnetarCollateralModule {
+interface IMagnetarCollateralModule {
     function depositAddCollateralAndBorrowFromMarket(DepositAddCollateralAndBorrowFromMarketData memory data) external payable;
     function depositRepayAndRemoveCollateralFromMarket(DepositRepayAndRemoveCollateralFromMarketData memory data) external payable;
 }
 
-interface MagnetarYieldBoxModule {
+interface IMagnetarYieldBoxModule {
     function withdrawHere(MagnetarWithdrawData memory data) external payable;
 }
 
-interface MagnetarOptionModule {
+interface IMagnetarOptionModule {
     function lockAndParticipate(LockAndParticipateData memory data) external payable;
     function exitPositionAndRemoveCollateral(ExitPositionAndRemoveCollateralData memory data) external payable;
 }
