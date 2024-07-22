@@ -3,7 +3,7 @@ pragma solidity 0.8.22;
 
 // Tapioca
 import {IExerciseOptionsData} from "../tap-token/ITapiocaOptionBroker.sol";
-import {IPearlmit} from "contracts/interfaces/periph/IPearlmit.sol";
+import {IPearlmit} from "src/tap-utils/interfaces/periph/IPearlmit.sol";
 import {MagnetarWithdrawData} from "../periph/IMagnetar.sol";
 
 import "../periph/ITapiocaOmnichainEngine.sol";

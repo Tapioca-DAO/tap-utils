@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.22;
 
-import {ISingularity} from "contracts/interfaces/bar/ISingularity.sol";
+import {ISingularity} from "src/tap-utils/interfaces/bar/ISingularity.sol";
 
 /*
 

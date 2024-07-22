@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.22;
 
-import {MarketLendOrRepayMsg, MarketRemoveAssetMsg, ExerciseOptionsMsg} from "contracts/interfaces/oft/IUsdo.sol";
-import {MarketBorrowMsg, MarketRemoveCollateralMsg, LeverageUpActionMsg} from "contracts/interfaces/oft/ITOFT.sol";
+import {MarketLendOrRepayMsg, MarketRemoveAssetMsg, ExerciseOptionsMsg} from "src/tap-utils/interfaces/oft/IUsdo.sol";
+import {MarketBorrowMsg, MarketRemoveCollateralMsg, LeverageUpActionMsg} from "src/tap-utils/interfaces/oft/ITOFT.sol";
 
 // @dev Used only to include structs into the ABI
 interface IABIGeneration {
