@@ -7,6 +7,6 @@
 [submodule "lib/tapioca-lbp"]
 	path = lib/tapioca-lbp
 	url = https://github.com/Tapioca-DAO/tapioca-lbp
-[submodule "lib/PermitC"]
-	path = lib/PermitC
+[submodule "lib/permitc"]
+	path = lib/permitc
 	url = https://github.com/Tapioca-DAO/PermitC
