@@ -40,6 +40,8 @@ interface IPenrose {
 
     function mintOpenInterestDebt(address twTap) external;
 
+    function bigBangMarkets() external view returns (address[] memory markets);
+
     function bigBangEthMarket() external view returns (address);
 
     function bigBangEthDebtRate() external view returns (uint256);
