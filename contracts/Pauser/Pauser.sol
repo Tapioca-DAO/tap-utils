@@ -5,9 +5,9 @@ pragma solidity 0.8.22;
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 // Tapioca
-import {IPausable} from "src/tap-utils/interfaces/periph/IPausable.sol";
-import {ICluster} from "src/tap-utils/interfaces/periph/ICluster.sol";
-import {IMarket} from "src/tap-utils/interfaces/bar/IMarket.sol";
+import {IPausable} from "contracts/interfaces/periph/IPausable.sol";
+import {ICluster} from "contracts/interfaces/periph/ICluster.sol";
+import {IMarket} from "contracts/interfaces/bar/IMarket.sol";
 
 /*
 
@@ -35,7 +35,7 @@ contract Pauser is Ownable {
         AddAsset,
         RemoveAsset
     }
-    
+
     enum SpecialStrategyType {
         Deposit,
         Withdraw
@@ -46,11 +46,14 @@ contract Pauser is Ownable {
         NonSingularityMarket, // it includes `updatePauseAll`
         SpecialStrategy, // it has `setPause(bool, uint256)
         Generic // method is called `setPause`
+
     }
+
     struct PausableContract {
         address _contract;
         PausableContractType _contractType;
     }
+
     PausableContract[] public pausableAddresses;
     mapping(address _contract => bool _registered) public registeredContracts;
 
@@ -67,7 +70,9 @@ contract Pauser is Ownable {
     }
 
     modifier onlyAllowed() {
-        if (msg.sender != owner() && !cluster.hasRole(msg.sender, keccak256("PAUSER_MANAGER"))) revert Pauser_NotAuthorized();
+        if (msg.sender != owner() && !cluster.hasRole(msg.sender, keccak256("PAUSER_MANAGER"))) {
+            revert Pauser_NotAuthorized();
+        }
         _;
     }
 
@@ -95,17 +100,17 @@ contract Pauser is Ownable {
     // ************************** //
     // *** PUBLIC FUNCTIONS ***** //
     // ************************** //
-    function toggleEmergencyPauseForType(bool _pause, PausableContractType _type) onlyAllowed external {
+    function toggleEmergencyPauseForType(bool _pause, PausableContractType _type) external onlyAllowed {
         uint256 len = pausableAddresses.length;
         for (uint256 i; i < len; i++) {
             PausableContract memory _pausable = pausableAddresses[i];
-            if(_pausable._contractType == _type) {
+            if (_pausable._contractType == _type) {
                 _togglePauseHelper(_pausable, _pause);
             }
         }
     }
 
-    function toggleEmergencyPause(bool _pause) onlyAllowed external {
+    function toggleEmergencyPause(bool _pause) external onlyAllowed {
         uint256 len = pausableAddresses.length;
         for (uint256 i; i < len; i++) {
             PausableContract memory _pausable = pausableAddresses[i];
@@ -113,18 +118,17 @@ contract Pauser is Ownable {
         }
         emit EmergencyTogglePause(_pause);
     }
-    
+
     /// @notice pauses contract
     /// @param _pausable address to pause/unpause
     /// @param _pause true/false
     /// @dev for Penrose, Leverage executors, Usdo, Toft, Magnetar
-    function togglePause(IPausable _pausable, bool _pause) onlyAllowed external {
+    function togglePause(IPausable _pausable, bool _pause) external onlyAllowed {
         if (!registeredContracts[address(_pausable)]) revert Pauser_NotValid();
         uint256 _index = _findIndex(address(_pausable));
         PausableContract memory _pausable = pausableAddresses[_index];
-        _togglePauseHelper(_pausable,  _pause);
+        _togglePauseHelper(_pausable, _pause);
     }
-
 
     // *************************** //
     // *** PRIVATE FUNCTIONS ***** //
@@ -164,6 +168,7 @@ contract Pauser is Ownable {
         _market.updatePauseAll(_pause);
         emit PauseToggledFor(address(_market), _pause);
     }
+
     function _toggleGenericPause(IPausable _pausable, bool _pause) private {
         if (!cluster.isWhitelisted(0, address(this))) revert Pauser_NotWhitelisted(address(this));
         if (!cluster.isWhitelisted(0, address(_pausable))) revert Pauser_NotWhitelisted(address(_pausable));

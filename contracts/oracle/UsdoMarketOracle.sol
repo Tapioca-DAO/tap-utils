@@ -6,7 +6,7 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/security/ReentrancyGuard.
 
 // Tapioca
 import {AccessControlDefaultAdminRules} from "./external/AccessControlDefaultAdminRules.sol";
-import {ITapiocaOracle} from "src/tap-utils/interfaces/periph/ITapiocaOracle.sol";
+import {ITapiocaOracle} from "contracts/interfaces/periph/ITapiocaOracle.sol";
 
 /**
  * @notice Helps inverse the value of a `ITapiocaOracle` contract.

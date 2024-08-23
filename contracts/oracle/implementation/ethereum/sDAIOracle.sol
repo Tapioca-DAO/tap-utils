@@ -5,8 +5,8 @@ pragma solidity 0.8.22;
 import {ReentrancyGuard} from "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 // Tapioca
-import {AggregatorInterface} from "src/tap-utils/interfaces/external/chainlink/AggregatorInterface.sol";
-import {ITapiocaOracle} from "src/tap-utils/interfaces/periph/ITapiocaOracle.sol";
+import {AggregatorInterface} from "contracts/interfaces/external/chainlink/AggregatorInterface.sol";
+import {ITapiocaOracle} from "contracts/interfaces/periph/ITapiocaOracle.sol";
 
 contract SDaiOracle is ITapiocaOracle, ReentrancyGuard {
     AggregatorInterface private immutable sDaiOracle;

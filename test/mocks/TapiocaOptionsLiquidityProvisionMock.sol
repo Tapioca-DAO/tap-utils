@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.22;
 
-import {IPearlmit, PearlmitHandler} from "src/tap-utils/pearlmit/PearlmitHandler.sol";
+import {IPearlmit, PearlmitHandler} from "contracts/pearlmit/PearlmitHandler.sol";
 import {ERC721} from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import {ITap} from "src/tap-utils/interfaces/oft/ITap.sol";
+import {ITap} from "contracts/interfaces/oft/ITap.sol";
 
 contract TapiocaOptionsLiquidityProvisionMock is PearlmitHandler, ERC721 {
     uint256 public sglAssetId;
@@ -19,7 +19,10 @@ contract TapiocaOptionsLiquidityProvisionMock is PearlmitHandler, ERC721 {
         bool rescue; // If true, the pool will be used to rescue funds in case of emergency
     }
 
-    constructor(uint256 _sglAssetId, address _yb, IPearlmit _pearlmit) PearlmitHandler(_pearlmit) ERC721("tOLP Mock", "MOCK") {
+    constructor(uint256 _sglAssetId, address _yb, IPearlmit _pearlmit)
+        PearlmitHandler(_pearlmit)
+        ERC721("tOLP Mock", "MOCK")
+    {
         sglAssetId = _sglAssetId;
         yieldBox = _yb;
     }
@@ -41,7 +44,6 @@ contract TapiocaOptionsLiquidityProvisionMock is PearlmitHandler, ERC721 {
     function activeSingularities(address _sgl) external view returns (uint256, uint256, uint256, bool) {
         return (sglAssetId, 0, 0, false);
     }
-
 
     function onERC1155Received(address, address, uint256, uint256, bytes calldata) external pure returns (bytes4) {
         // bytes4(keccak256("onERC1155Received(address,address,uint256,uint256,bytes)"))
