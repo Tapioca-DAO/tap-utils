@@ -3,16 +3,16 @@ pragma solidity 0.8.22;
 
 import "forge-std/Test.sol";
 
-import {OracleChainlinkSingleConstructorData} from "contracts/oracle/OracleChainlinkSingle.sol";
-import {SequencerFeedMock, RoundData} from "contracts/mocks/periph/SequencerFeedMock.sol";
-import {EthGlpOracle} from "contracts/oracle/implementation/Arbitrum/EthGlpOracle.sol";
-import {IGmxGlpManager} from "contracts/interfaces/external/gmx/IGmxGlpManager.sol";
-import {GLPOracle} from "contracts/oracle/implementation/Arbitrum/GLPOracle.sol";
-import {ITapiocaOracle} from "contracts/interfaces/periph/ITapiocaOracle.sol";
-import {OracleMultiConstructorData} from "contracts/oracle/OracleMulti.sol";
-import {SequencerCheck} from "contracts/oracle/utils/SequencerCheck.sol";
-import {SeerCLSolo} from "contracts/oracle/SeerCLSolo.sol";
-import {Seer} from "contracts/oracle/Seer.sol";
+import {OracleChainlinkSingleConstructorData} from "tap-utils/oracle/OracleChainlinkSingle.sol";
+import {SequencerFeedMock, RoundData} from "tap-utils/mocks/periph/SequencerFeedMock.sol";
+import {EthGlpOracle} from "tap-utils/oracle/implementation/Arbitrum/EthGlpOracle.sol";
+import {IGmxGlpManager} from "tap-utils/interfaces/external/gmx/IGmxGlpManager.sol";
+import {GLPOracle} from "tap-utils/oracle/implementation/Arbitrum/GLPOracle.sol";
+import {ITapiocaOracle} from "tap-utils/interfaces/periph/ITapiocaOracle.sol";
+import {OracleMultiConstructorData} from "tap-utils/oracle/OracleMulti.sol";
+import {SequencerCheck} from "tap-utils/oracle/utils/SequencerCheck.sol";
+import {SeerCLSolo} from "tap-utils/oracle/SeerCLSolo.sol";
+import {Seer} from "tap-utils/oracle/Seer.sol";
 //External
 import {IUniswapV3Pool} from "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol";
 

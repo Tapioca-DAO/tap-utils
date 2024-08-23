@@ -5,9 +5,9 @@ pragma solidity 0.8.22;
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 // Tapioca
-import {IPausable} from "contracts/interfaces/periph/IPausable.sol";
-import {ICluster} from "contracts/interfaces/periph/ICluster.sol";
-import {IMarket} from "contracts/interfaces/bar/IMarket.sol";
+import {IPausable} from "tap-utils/interfaces/periph/IPausable.sol";
+import {ICluster} from "tap-utils/interfaces/periph/ICluster.sol";
+import {IMarket} from "tap-utils/interfaces/bar/IMarket.sol";
 
 /*
 

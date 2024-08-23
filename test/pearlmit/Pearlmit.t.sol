@@ -5,7 +5,7 @@ pragma solidity 0.8.22;
 import {ECDSA} from "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 
 // Tapioca
-import {Pearlmit, IPearlmit, PearlmitHash} from "contracts/pearlmit/Pearlmit.sol";
+import {Pearlmit, IPearlmit, PearlmitHash} from "tap-utils/pearlmit/Pearlmit.sol";
 import {PearlmitBaseTest, ERC20Mock, ERC721Mock, ERC1155Mock} from "./PearlmitBase.t.sol";
 
 import "forge-std/console.sol";

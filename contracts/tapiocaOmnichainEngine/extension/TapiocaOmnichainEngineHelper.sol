@@ -16,7 +16,7 @@ import {
     YieldBoxApproveAllMsg,
     MarketPermitActionMsg,
     YieldBoxApproveAssetMsg
-} from "contracts/interfaces/periph/ITapiocaOmnichainEngine.sol";
+} from "tap-utils/interfaces/periph/ITapiocaOmnichainEngine.sol";
 import {
     ITapiocaOmnichainEngine,
     ERC20PermitApprovalMsg,
@@ -27,9 +27,9 @@ import {
     ERC20PermitApprovalMsg,
     ERC721PermitApprovalMsg,
     RemoteTransferMsg
-} from "contracts/interfaces/periph/ITapiocaOmnichainEngine.sol";
+} from "tap-utils/interfaces/periph/ITapiocaOmnichainEngine.sol";
 import {TapiocaOmnichainEngineCodec} from "../TapiocaOmnichainEngineCodec.sol";
-import {IPearlmit} from "contracts/interfaces/periph/IPearlmit.sol";
+import {IPearlmit} from "tap-utils/interfaces/periph/IPearlmit.sol";
 import {BaseToeMsgType} from "../BaseToeMsgType.sol";
 
 /*

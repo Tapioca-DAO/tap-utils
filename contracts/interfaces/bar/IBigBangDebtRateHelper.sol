@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.22;
 
-import {IPenrose} from "contracts/interfaces/bar/IPenrose.sol";
+import {IPenrose} from "tap-utils/interfaces/bar/IPenrose.sol";
 
 /*
 

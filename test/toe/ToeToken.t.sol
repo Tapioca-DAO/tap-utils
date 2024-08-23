@@ -23,25 +23,25 @@ import {
     ERC721PermitStruct,
     ERC20PermitStruct,
     RemoteTransferMsg
-} from "contracts/interfaces/periph/ITapiocaOmnichainEngine.sol";
+} from "tap-utils/interfaces/periph/ITapiocaOmnichainEngine.sol";
 import {
     ITapiocaOmnichainEngine,
     PrepareLzCallReturn,
     PrepareLzCallData,
     ComposeMsgData,
     LZSendParam
-} from "contracts/tapiocaOmnichainEngine/extension/TapiocaOmnichainEngineHelper.sol";
-import {TapiocaOmnichainExtExec} from "contracts/tapiocaOmnichainEngine/extension/TapiocaOmnichainExtExec.sol";
-import {BaseToeMsgType} from "contracts/tapiocaOmnichainEngine/BaseToeMsgType.sol";
+} from "tap-utils/tapiocaOmnichainEngine/extension/TapiocaOmnichainEngineHelper.sol";
+import {TapiocaOmnichainExtExec} from "tap-utils/tapiocaOmnichainEngine/extension/TapiocaOmnichainExtExec.sol";
+import {BaseToeMsgType} from "tap-utils/tapiocaOmnichainEngine/BaseToeMsgType.sol";
 
 // Tapioca Tests
 import {ToeTestHelper} from "../LZSetup/ToeTestHelper.sol";
 import {ToeTokenReceiverMock} from "../mocks/ToeTokenMock/ToeTokenReceiverMock.sol";
 import {ToeTokenSenderMock} from "../mocks/ToeTokenMock/ToeTokenSenderMock.sol";
-import {Pearlmit, IPearlmit} from "contracts/pearlmit/Pearlmit.sol";
-import {ICluster} from "contracts/interfaces/periph/ICluster.sol";
+import {Pearlmit, IPearlmit} from "tap-utils/pearlmit/Pearlmit.sol";
+import {ICluster} from "tap-utils/interfaces/periph/ICluster.sol";
 import {ToeTokenMock} from "../mocks/ToeTokenMock/ToeTokenMock.sol";
-import {Cluster} from "contracts/Cluster/Cluster.sol";
+import {Cluster} from "tap-utils/Cluster/Cluster.sol";
 import {ERC721Mock} from "../mocks/ERC721Mock.sol";
 
 import "forge-std/Test.sol";

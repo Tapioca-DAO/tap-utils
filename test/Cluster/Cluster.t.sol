@@ -8,7 +8,7 @@ import {TestBase} from "forge-std/Base.sol";
 
 import "forge-std/console.sol";
 
-import {Cluster} from "contracts/Cluster/Cluster.sol";
+import {Cluster} from "tap-utils/Cluster/Cluster.sol";
 
 // Lz
 import {TestHelper} from "../LZSetup/TestHelper.sol";
