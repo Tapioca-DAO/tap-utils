@@ -6,11 +6,11 @@ import {RebaseLibrary, Rebase} from "@boringcrypto/boring-solidity/contracts/lib
 import {SafeERC20, IERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
 // Tapioca
-import {IYieldBox, IYieldBoxTokenType} from "src/tap-utils/interfaces/yieldbox/IYieldBox.sol";
-import {ITapiocaOracle} from "src/tap-utils/interfaces/periph/ITapiocaOracle.sol";
-import {ISingularity, IMarket} from "src/tap-utils/interfaces/bar/ISingularity.sol";
-import {IPenrose} from "src/tap-utils/interfaces/bar/IPenrose.sol";
-import {IBigBang} from "src/tap-utils/interfaces/bar/IBigBang.sol";
+import {IYieldBox, IYieldBoxTokenType} from "tap-utils/interfaces/yieldbox/IYieldBox.sol";
+import {ITapiocaOracle} from "tap-utils/interfaces/periph/ITapiocaOracle.sol";
+import {ISingularity, IMarket} from "tap-utils/interfaces/bar/ISingularity.sol";
+import {IPenrose} from "tap-utils/interfaces/bar/IPenrose.sol";
+import {IBigBang} from "tap-utils/interfaces/bar/IBigBang.sol";
 
 /*
 
@@ -218,7 +218,11 @@ contract MagnetarHelper {
      * @param roundUp true/false for rounding up shares.
      * @return fraction The fraction.
      */
-    function getFractionForAmount(ISingularity singularity, uint256 amount, bool roundUp) external view returns (uint256 fraction) {
+    function getFractionForAmount(ISingularity singularity, uint256 amount, bool roundUp)
+        external
+        view
+        returns (uint256 fraction)
+    {
         (uint128 totalAssetShare, uint128 totalAssetBase) = singularity.totalAsset();
         (uint128 totalBorrowElastic,) = singularity._totalBorrow();
         uint256 assetId = singularity._assetId();

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity 0.8.22;
 
-import {ISingularity} from "src/tap-utils/interfaces/bar/ISingularity.sol";
+import {ISingularity} from "tap-utils/interfaces/bar/ISingularity.sol";
 
 /*
 
@@ -25,5 +25,8 @@ interface IMagnetarHelper {
         view
         returns (uint256 part);
 
-    function getFractionForAmount(ISingularity singularity, uint256 amount, bool roundUp) external view returns (uint256 fraction);
+    function getFractionForAmount(ISingularity singularity, uint256 amount, bool roundUp)
+        external
+        view
+        returns (uint256 fraction);
 }

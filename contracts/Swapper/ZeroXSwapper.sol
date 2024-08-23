@@ -6,8 +6,8 @@ import {SafeERC20, IERC20} from "@openzeppelin/contracts/token/ERC20/utils/SafeE
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 // Tapioca
-import {IZeroXSwapper} from "src/tap-utils/interfaces/periph/IZeroXSwapper.sol";
-import {ICluster} from "src/tap-utils/interfaces/periph/ICluster.sol";
+import {IZeroXSwapper} from "tap-utils/interfaces/periph/IZeroXSwapper.sol";
+import {ICluster} from "tap-utils/interfaces/periph/ICluster.sol";
 
 /*
 
@@ -65,7 +65,9 @@ contract ZeroXSwapper is IZeroXSwapper, Ownable {
         returns (uint256 amountOut)
     {
         if (!cluster.isWhitelisted(0, msg.sender)) revert SenderNotValid(msg.sender);
-        if (!cluster.isWhitelisted(0, swapData.swapTarget) && swapData.swapTarget != zeroXProxy) revert TargetNotValid(swapData.swapTarget);
+        if (!cluster.isWhitelisted(0, swapData.swapTarget) && swapData.swapTarget != zeroXProxy) {
+            revert TargetNotValid(swapData.swapTarget);
+        }
 
         // Transfer tokens to this contract
         swapData.sellToken.safeTransferFrom(msg.sender, address(this), amountIn);

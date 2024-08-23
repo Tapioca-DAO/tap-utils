@@ -5,8 +5,8 @@ pragma solidity 0.8.22;
 import {RebaseLibrary, Rebase} from "@boringcrypto/boring-solidity/contracts/libraries/BoringRebase.sol";
 
 // Tapioca
-import {IYieldBox} from "src/tap-utils/interfaces/yieldbox/IYieldBox.sol";
-import {ISingularity, IMarket} from "src/tap-utils/interfaces/bar/ISingularity.sol";
+import {IYieldBox} from "tap-utils/interfaces/yieldbox/IYieldBox.sol";
+import {ISingularity, IMarket} from "tap-utils/interfaces/bar/ISingularity.sol";
 
 /*
 
