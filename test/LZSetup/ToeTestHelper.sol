@@ -11,7 +11,7 @@ import {
     ERC20PermitStruct,
     ERC721PermitApprovalMsg,
     ERC721PermitStruct
-} from "tap-utils/interfaces/periph/ITapiocaOmnichainEngine.sol";
+} from "contracts/interfaces/periph/ITapiocaOmnichainEngine.sol";
 
 import "forge-std/Test.sol";
 

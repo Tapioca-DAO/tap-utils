@@ -5,7 +5,7 @@ pragma solidity 0.8.22;
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 
 // Tapioca
-import {IPearlmit} from "tap-utils/interfaces/periph/IPearlmit.sol";
+import {IPearlmit} from "contracts/interfaces/periph/IPearlmit.sol";
 
 abstract contract PearlmitHandler is Ownable {
     // ************ //

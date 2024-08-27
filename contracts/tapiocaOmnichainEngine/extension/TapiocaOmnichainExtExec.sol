@@ -12,14 +12,14 @@ import {
     YieldBoxApproveAllMsg,
     MarketPermitActionMsg,
     YieldBoxApproveAssetMsg
-} from "tap-utils/interfaces/periph/ITapiocaOmnichainEngine.sol";
-import {IPermitBorrow} from "tap-utils/interfaces/common/IPermitBorrow.sol";
+} from "contracts/interfaces/periph/ITapiocaOmnichainEngine.sol";
+import {IPermitBorrow} from "contracts/interfaces/common/IPermitBorrow.sol";
 import {TapiocaOmnichainEngineCodec} from "../TapiocaOmnichainEngineCodec.sol";
-import {IPermitAll} from "tap-utils/interfaces/common/IPermitAll.sol";
-import {IPearlmit} from "tap-utils/interfaces/periph/IPearlmit.sol";
-import {ICluster} from "tap-utils/interfaces/periph/ICluster.sol";
-import {IPermit} from "tap-utils/interfaces/common/IPermit.sol";
-import {ERC721Permit} from "tap-utils/utils/ERC721Permit.sol";
+import {IPermitAll} from "contracts/interfaces/common/IPermitAll.sol";
+import {IPearlmit} from "contracts/interfaces/periph/IPearlmit.sol";
+import {ICluster} from "contracts/interfaces/periph/ICluster.sol";
+import {IPermit} from "contracts/interfaces/common/IPermit.sol";
+import {ERC721Permit} from "contracts/utils/ERC721Permit.sol";
 
 /*
 

@@ -6,9 +6,9 @@ import {
     MessagingReceipt, OFTReceipt, SendParam
 } from "@layerzerolabs/lz-evm-oapp-v2/contracts/oft/interfaces/IOFT.sol";
 // Tapioca
-import {BaseTapiocaOmnichainEngine, IPearlmit} from "tap-utils/tapiocaOmnichainEngine/BaseTapiocaOmnichainEngine.sol";
-import {TapiocaOmnichainSender} from "tap-utils/tapiocaOmnichainEngine/TapiocaOmnichainSender.sol";
-import {ICluster} from "tap-utils/interfaces/periph/ICluster.sol";
+import {BaseTapiocaOmnichainEngine, IPearlmit} from "contracts/tapiocaOmnichainEngine/BaseTapiocaOmnichainEngine.sol";
+import {TapiocaOmnichainSender} from "contracts/tapiocaOmnichainEngine/TapiocaOmnichainSender.sol";
+import {ICluster} from "contracts/interfaces/periph/ICluster.sol";
 
 /*
 

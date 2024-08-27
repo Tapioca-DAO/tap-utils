@@ -6,8 +6,8 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/security/ReentrancyGuard.
 
 // Tapioca
 import {AccessControlDefaultAdminRules} from "../../external/AccessControlDefaultAdminRules.sol";
-import {IGmxGlpManager} from "tap-utils/interfaces/external/gmx/IGmxGlpManager.sol";
-import {ITapiocaOracle} from "tap-utils/interfaces/periph/ITapiocaOracle.sol";
+import {IGmxGlpManager} from "contracts/interfaces/external/gmx/IGmxGlpManager.sol";
+import {ITapiocaOracle} from "contracts/interfaces/periph/ITapiocaOracle.sol";
 import {SequencerCheck} from "../../utils/SequencerCheck.sol";
 
 contract GLPOracle is ITapiocaOracle, SequencerCheck, AccessControlDefaultAdminRules, ReentrancyGuard {
