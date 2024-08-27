@@ -7,7 +7,7 @@ import {ReentrancyGuard} from "@openzeppelin/contracts/security/ReentrancyGuard.
 
 // Tapioca
 import {OracleChainlinkSingle, OracleChainlinkSingleConstructorData} from "./OracleChainlinkSingle.sol";
-import {ITapiocaOracle} from "src/tap-utils/interfaces/periph/ITapiocaOracle.sol";
+import {ITapiocaOracle} from "tap-utils/interfaces/periph/ITapiocaOracle.sol";
 
 contract SeerCLSolo is ITapiocaOracle, OracleChainlinkSingle, ReentrancyGuard {
     string public _name;

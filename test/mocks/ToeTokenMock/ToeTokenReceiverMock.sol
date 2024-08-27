@@ -6,11 +6,9 @@ import {OFTCore} from "@layerzerolabs/lz-evm-oapp-v2/contracts/oft/OFTCore.sol";
 import {Origin} from "@layerzerolabs/lz-evm-oapp-v2/contracts/oapp/OApp.sol";
 
 // Tapioca
-import {
-    BaseTapiocaOmnichainEngine, IPearlmit
-} from "src/tap-utils/tapiocaOmnichainEngine/BaseTapiocaOmnichainEngine.sol";
-import {TapiocaOmnichainReceiver} from "src/tap-utils/tapiocaOmnichainEngine/TapiocaOmnichainReceiver.sol";
-import {ICluster} from "src/tap-utils/interfaces/periph/ICluster.sol";
+import {BaseTapiocaOmnichainEngine, IPearlmit} from "tap-utils/tapiocaOmnichainEngine/BaseTapiocaOmnichainEngine.sol";
+import {TapiocaOmnichainReceiver} from "tap-utils/tapiocaOmnichainEngine/TapiocaOmnichainReceiver.sol";
+import {ICluster} from "tap-utils/interfaces/periph/ICluster.sol";
 
 /*
 

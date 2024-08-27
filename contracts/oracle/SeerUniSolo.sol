@@ -8,7 +8,7 @@ import {IUniswapV3Pool} from "@uniswap/v3-core/contracts/interfaces/IUniswapV3Po
 
 // Tapioca
 import {OracleUniSolo, OracleUniSoloConstructorData} from "./OracleUniSolo.sol";
-import {ITapiocaOracle} from "src/tap-utils/interfaces/periph/ITapiocaOracle.sol";
+import {ITapiocaOracle} from "tap-utils/interfaces/periph/ITapiocaOracle.sol";
 
 contract SeerUniSolo is ITapiocaOracle, OracleUniSolo {
     string public _name;
