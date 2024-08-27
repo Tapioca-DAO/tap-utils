@@ -18,7 +18,7 @@ import {
     ERC20PermitApprovalMsg,
     RemoteTransferMsg,
     LZSendParam
-} from "contracts/interfaces/periph/ITapiocaOmnichainEngine.sol";
+} from "tap-utils/interfaces/periph/ITapiocaOmnichainEngine.sol";
 import {TapiocaOmnichainExtExec} from "./extension/TapiocaOmnichainExtExec.sol";
 import {TapiocaOmnichainEngineCodec} from "./TapiocaOmnichainEngineCodec.sol";
 import {BaseTapiocaOmnichainEngine} from "./BaseTapiocaOmnichainEngine.sol";
