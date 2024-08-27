@@ -10,3 +10,15 @@
 [submodule "lib/permitc"]
 	path = lib/permitc
 	url = https://github.com/Tapioca-DAO/PermitC
+[submodule "lib/tapiocaz"]
+	path = lib/tapiocaz
+	url = https://github.com/Tapioca-DAO/tapiocaz
+[submodule "lib/tap-yieldbox"]
+	path = lib/tap-yieldbox
+	url = https://github.com/Tapioca-DAO/tap-yieldbox
+[submodule "lib/tapioca-bar"]
+	path = lib/tapioca-bar
+	url = https://github.com/Tapioca-DAO/tapioca-bar
+[submodule "lib/tap-token"]
+	path = lib/tap-token
+	url = https://github.com/Tapioca-DAO/tap-token
