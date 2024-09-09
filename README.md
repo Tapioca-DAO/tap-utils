@@ -19,3 +19,11 @@ To install this repository:
 yarn
 ```
 This will install the necessary npm packages, forge-std and close the submodule dependencies.
+
+## Compile
+
+This behavior will change once we move in from hardhat (currently used for deployments only), for now we need to compile hardhat to generate an intermediary folder which contains the actual folder used by the forge to compile from.
+
+```bash
+npx hardhat compile && forge compile
+```
