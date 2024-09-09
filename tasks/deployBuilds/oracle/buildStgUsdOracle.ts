@@ -15,7 +15,8 @@ export const buildSTGCLOracle = async (
         'STG/USD', // Symbol
         18, // Decimals
         {
-            _poolChainlink: DEPLOY_CONFIG.POST_LBP[chainID]!.STG_USD_CL_DATA_FEED_ADDRESS, // CL Pool
+            _poolChainlink:
+                DEPLOY_CONFIG.POST_LBP[chainID]!.STG_USD_CL_DATA_FEED_ADDRESS, // CL Pool
             _isChainlinkMultiplied: 1, // Multiply/divide Uni
             _inBase: (1e18).toString(), // In base
             stalePeriod: isTestnet ? 4294967295 : 86400, // CL stale period, 1 day on prod. max uint32 on testnet
