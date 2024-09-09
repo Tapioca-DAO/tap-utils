@@ -1,7 +1,7 @@
 [profile.default]
 src = 'contracts'
 out = 'gen/out'
-libs = ['node_modules', 'lib']
+libs = ['node_modules', 'lib','dep']
 cache_path  = 'gen/cache_forge'
 broadcast = 'gen/broadcast'
 
@@ -14,8 +14,8 @@ ignored_error_codes = ["shadowing"] # For LBP
 remappings = [
 	"tap-utils/=gen/contracts/",
 	"solidity-bytes-utils/=node_modules/@layerzerolabs/solidity-bytes-utils/",
-	"tapioca-lbp/=lib/tapioca-lbp/contracts/",
-	"permitc/=lib/permitc/src/",
+	"tapioca-lbp/=dep/tapioca-lbp/contracts/",
+	"permitc/=dep/permitc/src/",
 ]
 
 

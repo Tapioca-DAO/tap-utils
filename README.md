@@ -11,43 +11,11 @@ The `tapioca-utils` is a repository containing contracts that are not used as co
 - Oracle base contracts and implementation to be used by the core contracts.
 
 
-## Usage
-
-To install Foundry:
-
-```sh
-curl -L https://foundry.paradigm.xyz | bash
-```
-
-This will download foundryup. To start Foundry, run:
-
-```sh
-foundryup
-```
-
-To clone the repo:
-
-```sh
-git clone https://github.com/Tapioca-DAO/tap-utils.git && cd tap-utils
-```
-
-To install as a forge library:
-
-```sh
-forge install Tapioca-DAO/tap-utils
-```
-
-To install as a submodule:
-    
-```sh
-git submodule add https://github.com/Tapioca-DAO/tap-utils.git
-```
-
 ## Install
 
 To install this repository:
 
 ```bash
-forge install
 yarn
 ```
+This will install the necessary npm packages, forge-std and close the submodule dependencies.
