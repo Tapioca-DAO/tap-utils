@@ -7,6 +7,10 @@ import {
     TTapiocaDeployTaskArgs,
     TTapiocaDeployerVmPass,
 } from 'tapioca-sdk/dist/ethers/hardhat/DeployerVM';
+import { buildARBCLOracle } from 'tasks/deployBuilds/oracle/buildArbUsdOracle';
+import { buildSTGCLOracle } from 'tasks/deployBuilds/oracle/buildStgUsdOracle';
+import { buildZROCLOracle } from 'tasks/deployBuilds/oracle/buildZroUsdOracle';
+import { buildStargateV2StratOracle } from 'tasks/deployBuilds/oracle/buildStargateV2StratOracle';
 import { buildDualETHOracle } from 'tasks/deployBuilds/oracle/buildDualETHOracle';
 import { buildETHCLOracle } from 'tasks/deployBuilds/oracle/buildETHCLOracle';
 import { buildETHUniOracle } from 'tasks/deployBuilds/oracle/buildETHUniOracle';
@@ -162,6 +166,63 @@ async function tapiocaDeployTask(
             .add(await buildUSDCOracle(hre, owner, isTestnet))
             .add(await buildRethUsdOracle(hre, owner, isTestnet))
             .add(await buildWstethUsdOracle(hre, owner, isTestnet))
+            .add(await buildARBCLOracle(hre, owner, isTestnet))
+            .add(await buildSTGCLOracle(hre, owner, isTestnet))
+            .add(await buildZROCLOracle(hre, owner, isTestnet))
+            .add(
+                await buildStargateV2StratOracle(hre, {
+                    deploymentName: DEPLOYMENT_NAMES.STARGATEV2_ORACLE_ARB_USDC,
+                    args: ['', '', owner],
+                    dependsOn: [
+                        {
+                            argPosition: 0,
+                            deploymentName:
+                                DEPLOYMENT_NAMES.ARB_USD_SEER_ORACLE,
+                        },
+                        {
+                            argPosition: 1,
+                            deploymentName:
+                                DEPLOYMENT_NAMES.USDC_SEER_CL_ORACLE,
+                        },
+                    ],
+                }),
+            )
+            .add(
+                await buildStargateV2StratOracle(hre, {
+                    deploymentName: DEPLOYMENT_NAMES.STARGATEV2_ORACLE_STG_USDC,
+                    args: ['', '', owner],
+                    dependsOn: [
+                        {
+                            argPosition: 0,
+                            deploymentName:
+                                DEPLOYMENT_NAMES.STG_USD_SEER_ORACLE,
+                        },
+                        {
+                            argPosition: 1,
+                            deploymentName:
+                                DEPLOYMENT_NAMES.USDC_SEER_CL_ORACLE,
+                        },
+                    ],
+                }),
+            )
+            .add(
+                await buildStargateV2StratOracle(hre, {
+                    deploymentName: DEPLOYMENT_NAMES.STARGATEV2_ORACLE_ZRO_USDC,
+                    args: ['', '', owner],
+                    dependsOn: [
+                        {
+                            argPosition: 0,
+                            deploymentName:
+                                DEPLOYMENT_NAMES.ZRO_USD_SEER_ORACLE,
+                        },
+                        {
+                            argPosition: 1,
+                            deploymentName:
+                                DEPLOYMENT_NAMES.USDC_SEER_CL_ORACLE,
+                        },
+                    ],
+                }),
+            )
             .add(
                 await buildUsdoMarketOracle(hre, {
                     deploymentName: DEPLOYMENT_NAMES.MARKET_RETH_ORACLE,
