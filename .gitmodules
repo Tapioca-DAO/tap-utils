@@ -4,18 +4,24 @@
 [submodule "dep/tapioca-bar"]
 	path = dep/tapioca-bar
 	url = https://github.com/Tapioca-DAO/tapioca-bar
+	branch = master
 [submodule "dep/tapiocaz"]
 	path = dep/tapiocaz
 	url = https://github.com/Tapioca-DAO/tapiocaz
+	branch = master
 [submodule "dep/tapioca-sdk"]
 	path = dep/tapioca-sdk
 	url = https://github.com/Tapioca-DAO/tapioca-sdk
+	branch = main
 [submodule "dep/tap-token"]
 	path = dep/tap-token
 	url = https://github.com/Tapioca-DAO/tap-token
+	branch = main
 [submodule "dep/permitc"]
 	path = dep/permitc
 	url = https://github.com/Tapioca-DAO/PermitC
+	branch = main
 [submodule "dep/tapioca-lbp"]
 	path = dep/tapioca-lbp
 	url = https://github.com/Tapioca-DAO/tapioca-lbp
+	branch = master
