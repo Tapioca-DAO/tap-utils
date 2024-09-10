@@ -22,7 +22,11 @@ This will install the necessary npm packages, forge-std and close the submodule 
 
 ## Compile
 
-This behavior will change once we move in from hardhat (currently used for deployments only), for now we need to compile hardhat to generate an intermediary folder which contains the actual folder used by the forge to compile from.
+This behavior will change once we move in from hardhat (currently used for deployments only), for now we need to compile hardhat to generate an intermediary folder which contains the actual folder used by the forge to compile from. This folder is `./gen`, which is generated only after a hardhat compilation. This is a temporary solution to a remapping problem because of the other repos using `tap-utils`.
+
+First, copy the content of `.env.example` to a `.env/` folder, the filename should be `localhost.env` 
+
+next, run
 
 ```bash
 npx hardhat compile && forge compile
