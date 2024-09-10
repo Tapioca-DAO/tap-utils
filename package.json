@@ -1,11 +1,11 @@
 {
     "name": "tapioca-utils",
     "scripts": {
-        "clean": "npx hardhat --config hardhat.export.ts clean",
-        "compile": "npx hardhat --config hardhat.export.ts compile && forge compile",
-        "build": "npx hardhat --config hardhat.export.ts compile && forge compile",
-        "typechain": "npx hardhat --config hardhat.export.ts typechain",
-        "coverage": "npm run clean && npm run typechain && hh --config hardhat.export.ts coverage",
+        "clean": "npx hardhat clean",
+        "compile": "npx hardhat compile && forge compile",
+        "build": "npx hardhat compile && forge compile",
+        "typechain": "npx hardhat typechain",
+        "coverage": "npm run clean && npm run typechain && hh coverage",
         "gen:sdk": "npx hardhat exportSDK --network",
         "list": "npx hardhat listDeploy --network",
         "size": "npx hardhat size-contracts",
