@@ -64,7 +64,8 @@ contract ZeroXSwapper is IZeroXSwapper, Ownable {
         payable
         returns (uint256 amountOut)
     {
-        if (!cluster.isWhitelisted(0, msg.sender)) revert SenderNotValid(msg.sender);
+        if (!cluster.hasRole(msg.sender, keccak256("SWAP_EXECUTOR"))) revert SenderNotValid(msg.sender);
+        // if (!cluster.isWhitelisted(0, msg.sender)) revert SenderNotValid(msg.sender);
         if (swapData.swapTarget != zeroXProxy) revert TargetNotValid(swapData.swapTarget);
 
         // Transfer tokens to this contract

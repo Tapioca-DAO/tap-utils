@@ -89,7 +89,8 @@ contract ZeroXSwapperTest is TestBase, StdAssertions, StdCheats, StdUtils, TestH
             swapCallData: abi.encodeWithSelector(ZerroXSwapperMockTarget.toggleState.selector)
         });
 
-        cluster.updateContract(0, address(this), true);
+        // cluster.updateContract(0, address(this), true);
+        cluster.setRoleForContract(address(this),  keccak256("SWAP_EXECUTOR"), true);
 
         aERC20.approve(address(swapper), type(uint256).max);
         swapper.swap(swapData, amount, amount);

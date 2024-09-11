@@ -146,8 +146,10 @@ contract Pauser is Ownable {
     }
 
     function _toggleSingularityPause(IMarket _singularity, bool _pause) private {
-        if (!cluster.isWhitelisted(0, address(this))) revert Pauser_NotWhitelisted(address(this));
-        if (!cluster.isWhitelisted(0, address(_singularity))) revert Pauser_NotWhitelisted(address(_singularity));
+        if (!cluster.hasRole(address(this), keccak256("PAUSER_MANAGER_CONTRACT"))) revert Pauser_NotWhitelisted(address(this));
+        if (!cluster.hasRole(address(_singularity), keccak256("PAUSER_CALLEE"))) revert Pauser_NotWhitelisted(address(_singularity));
+        // if (!cluster.isWhitelisted(0, address(this))) revert Pauser_NotWhitelisted(address(this));
+        // if (!cluster.isWhitelisted(0, address(_singularity))) revert Pauser_NotWhitelisted(address(_singularity));
 
         _singularity.updatePause(uint256(MarketPauseType.Borrow), _pause);
         _singularity.updatePause(uint256(MarketPauseType.Repay), _pause);
@@ -162,24 +164,30 @@ contract Pauser is Ownable {
     }
 
     function _toggleNonSingularityMarketPause(IMarket _market, bool _pause) private {
-        if (!cluster.isWhitelisted(0, address(this))) revert Pauser_NotWhitelisted(address(this));
-        if (!cluster.isWhitelisted(0, address(_market))) revert Pauser_NotWhitelisted(address(_market));
+        if (!cluster.hasRole(address(this), keccak256("PAUSER_MANAGER_CONTRACT"))) revert Pauser_NotWhitelisted(address(this));
+        if (!cluster.hasRole(address(_market), keccak256("PAUSER_CALLEE"))) revert Pauser_NotWhitelisted(address(_market));
+        // if (!cluster.isWhitelisted(0, address(this))) revert Pauser_NotWhitelisted(address(this));
+        // if (!cluster.isWhitelisted(0, address(_market))) revert Pauser_NotWhitelisted(address(_market));
 
         _market.updatePauseAll(_pause);
         emit PauseToggledFor(address(_market), _pause);
     }
 
     function _toggleGenericPause(IPausable _pausable, bool _pause) private {
-        if (!cluster.isWhitelisted(0, address(this))) revert Pauser_NotWhitelisted(address(this));
-        if (!cluster.isWhitelisted(0, address(_pausable))) revert Pauser_NotWhitelisted(address(_pausable));
+        if (!cluster.hasRole(address(this), keccak256("PAUSER_MANAGER_CONTRACT"))) revert Pauser_NotWhitelisted(address(this));
+        if (!cluster.hasRole(address(_pausable), keccak256("PAUSER_CALLEE"))) revert Pauser_NotWhitelisted(address(_pausable));
+        // if (!cluster.isWhitelisted(0, address(this))) revert Pauser_NotWhitelisted(address(this));
+        // if (!cluster.isWhitelisted(0, address(_pausable))) revert Pauser_NotWhitelisted(address(_pausable));
 
         _pausable.setPause(_pause);
         emit PauseToggledFor(address(_pausable), _pause);
     }
 
     function _toggleSpecialStrategy(IPausable _pausable, bool _pause) private {
-        if (!cluster.isWhitelisted(0, address(this))) revert Pauser_NotWhitelisted(address(this));
-        if (!cluster.isWhitelisted(0, address(_pausable))) revert Pauser_NotWhitelisted(address(_pausable));
+        if (!cluster.hasRole(address(this), keccak256("PAUSER_MANAGER_CONTRACT"))) revert Pauser_NotWhitelisted(address(this));
+        if (!cluster.hasRole(address(_pausable), keccak256("PAUSER_CALLEE"))) revert Pauser_NotWhitelisted(address(_pausable));
+        // if (!cluster.isWhitelisted(0, address(this))) revert Pauser_NotWhitelisted(address(this));
+        // if (!cluster.isWhitelisted(0, address(_pausable))) revert Pauser_NotWhitelisted(address(_pausable));
 
         _pausable.setPause(_pause, uint256(SpecialStrategyType.Deposit));
         _pausable.setPause(_pause, uint256(SpecialStrategyType.Withdraw));
