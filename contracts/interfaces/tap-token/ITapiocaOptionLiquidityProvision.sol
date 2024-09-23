@@ -21,7 +21,7 @@ interface ITapiocaOptionLiquidityProvision is IERC721 {
         view
         returns (uint256 sglAssetId, uint256 totalDeposited, uint256 poolWeight, bool rescue);
 
-    function lock(address to, address singularity, uint128 lockDuration, uint128 amount)
+    function lock(address to, address singularity, uint128 lockDuration, uint128 amount, address _for)
         external
         returns (uint256 tokenId);
 
