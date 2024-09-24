@@ -22,7 +22,7 @@ interface ITapiocaOptionBroker {
 
     function exerciseOption(uint256 oTAPTokenID, address paymentToken, uint256 tapAmount) external;
 
-    function participate(uint256 tOLPTokenID) external returns (uint256 oTAPTokenID);
+    function participate(uint256 tOLPTokenID, uint256 _minReward) external returns (uint256 oTAPTokenID);
 
     function exitPosition(uint256 oTAPTokenID) external;
 
