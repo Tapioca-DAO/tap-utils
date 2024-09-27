@@ -52,7 +52,7 @@ contract TapiocaOmnichainExtExec {
 
         uint256 approvalsLength = approvals.length;
         for (uint256 i = 0; i < approvalsLength;) {
-            _sanitizeTarget(approvals[i].token);
+            _sanitizeTarget(approvals[i].token, "PERMIT_ERC20_CALLEE");
             try IERC20Permit(approvals[i].token).permit(
                 approvals[i].owner,
                 approvals[i].spender,
@@ -77,7 +77,7 @@ contract TapiocaOmnichainExtExec {
 
         uint256 approvalsLength = approvals.length;
         for (uint256 i = 0; i < approvalsLength;) {
-            _sanitizeTarget(approvals[i].token);
+            _sanitizeTarget(approvals[i].token, "PERMIT_ERC721_CALLEE");
             try ERC721Permit(approvals[i].token).permit(
                 approvals[i].spender,
                 approvals[i].tokenId,
@@ -100,7 +100,7 @@ contract TapiocaOmnichainExtExec {
         (address pearlmit, IPearlmit.PermitBatchTransferFrom memory batchApprovals) =
             TapiocaOmnichainEngineCodec.decodePearlmitBatchApprovalMsg(_data);
 
-        _sanitizeTarget(pearlmit);
+        _sanitizeTarget(pearlmit, "PERMIT_PEARLMIT_CALLEE");
 
         batchApprovals.owner = _srcChainSender; // overwrite the owner with the src chain sender
         // Redundant security measure, just for the sake of it
@@ -125,7 +125,7 @@ contract TapiocaOmnichainExtExec {
 
         uint256 approvalsLength = approvals.length;
         for (uint256 i = 0; i < approvalsLength;) {
-            _sanitizeTarget(approvals[i].target);
+            _sanitizeTarget(approvals[i].target, "PERMIT_YIELDBOX_CALLEE");
             unchecked {
                 ++i;
             }
@@ -147,7 +147,7 @@ contract TapiocaOmnichainExtExec {
      */
     function yieldBoxPermitAll(bytes memory _data) public payable {
         YieldBoxApproveAllMsg memory approval = TapiocaOmnichainEngineCodec.decodeYieldBoxApproveAllMsg(_data);
-        _sanitizeTarget(approval.target);
+        _sanitizeTarget(approval.target, "PERMIT_YIELDBOX_CALLEE");
 
         if (approval.permit) {
             _yieldBoxPermitApproveAll(approval);
@@ -170,7 +170,7 @@ contract TapiocaOmnichainExtExec {
      */
     function marketPermit(bytes memory _data) public payable {
         MarketPermitActionMsg memory approval = TapiocaOmnichainEngineCodec.decodeMarketPermitApprovalMsg(_data);
-        _sanitizeTarget(approval.target);
+        _sanitizeTarget(approval.target, "PERMIT_MARKET_CALLEE");
 
         if (approval.permitAsset) {
             _marketPermitAssetApproval(approval);
@@ -271,9 +271,10 @@ contract TapiocaOmnichainExtExec {
         ) {} catch {}
     }
 
-    function _sanitizeTarget(address target) private view {
+    function _sanitizeTarget(address target, bytes memory role) private view {
         ICluster cluster = ICluster(StorageSlot.getAddressSlot(CLUSTER_SLOT).value);
-        if (!cluster.isWhitelisted(0, target)) {
+        // if (!cluster.isWhitelisted(0, target)) {
+        if (!cluster.hasRole(target, keccak256(role))) {
             revert InvalidApprovalTarget(target);
         }
     }
