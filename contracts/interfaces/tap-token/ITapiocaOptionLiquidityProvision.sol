@@ -21,7 +21,7 @@ interface ITapiocaOptionLiquidityProvision is IERC721 {
         view
         returns (uint256 sglAssetId, uint256 totalDeposited, uint256 poolWeight, bool rescue);
 
-    function lock(address to, address singularity, uint128 lockDuration, uint128 amount, address _for)
+    function lock(address to, address singularity, uint128 lockDuration, uint256 amount, address _for)
         external
         returns (uint256 tokenId);
 
@@ -30,7 +30,7 @@ interface ITapiocaOptionLiquidityProvision is IERC721 {
     function lockPositions(uint256 tokenId)
         external
         view
-        returns (uint128 sglAssetID, uint128 ybShares, uint128 lockTime, uint128 lockDuration);
+        returns (uint128 sglAssetID, uint256 ybShares, uint128 lockTime, uint128 lockDuration);
 }
 
 struct IOptionsLockData {
@@ -38,7 +38,7 @@ struct IOptionsLockData {
     address target;
     address tAsset;
     uint128 lockDuration;
-    uint128 amount; // @dev: in case of a previous `YB` deposit, this amount is replaced by the obtained shares
+    uint256 amount; // @dev: in case of a previous `YB` deposit, this amount is replaced by the obtained shares
     uint256 fraction;
     uint256 minDiscountOut;
 }
